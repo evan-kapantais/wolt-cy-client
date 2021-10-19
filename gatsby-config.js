@@ -1,13 +1,9 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
-
 module.exports = {
   siteMetadata: {
-    title: `Wolt GR`,
-    description: `An extensive FAQ page for Wolt Greece's partners.`,
+    title: `Wolt CY`,
+    description: `An extensive FAQ page for Wolt Cyprus' partners.`,
     author: `@evan-kapantais`,
-    siteUrl: `https://wolt-client.netlify.app`,
+    siteUrl: `https://wolt-faq-cy.netlify.app`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -48,7 +44,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `https://wolt-server.herokuapp.com`,
+        apiURL: `https://wolt-server-cy.herokuapp.com`,
         collectionTypes: ["section", "news-item"],
         singleTypes: [
           "version",
