@@ -37,17 +37,17 @@ const IndexPage = ({ data }) => {
   const [topics, setTopics] = useState([]);
 
   // Sourced content
+  const fetchedTopics = data.allStrapiSection.edges;
   const topicsOrder = data.strapiTopicsOrder.order.split("\n");
   const newsItems = data.allStrapiNewsItem.edges;
   const decoImage = getImage(data.strapiDecorativeImage.image.localFile);
 
   // Order topics on load
   useEffect(() => {
-    const topics = data.allStrapiSection.edges;
     const orderedTopics = [];
 
     topicsOrder.forEach(title => {
-      const found = topics.find(topic => topic.node.title === title);
+      const found = fetchedTopics.find(topic => topic.node.title === title);
 
       if (found) {
         orderedTopics.push(found);
@@ -56,7 +56,7 @@ const IndexPage = ({ data }) => {
 
     setTopics([...orderedTopics]);
     setIsLoading(false);
-  }, []);
+  }, [fetchedTopics, topicsOrder]);
 
   // Init event listeners after loading
   useEffect(() => {

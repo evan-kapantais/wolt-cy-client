@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "gatsby";
-import { animateMenu } from "../utils/animations";
 
 import people from "../images/people.png";
 
