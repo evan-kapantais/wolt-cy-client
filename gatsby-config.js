@@ -32,7 +32,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `wolt-client`,
+        name: `wolt-client-cy`,
         short_name: `wolt`,
         start_url: `/`,
         background_color: `#00c2e8`,
